@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Grtsk Peta';
+}
+
+.container{
+    width: 1680px;
+    padding: 0px;
+    margin: 0px auto;
+}
+
+  @import "./blocks/header";
+  @import "./blocks/main";

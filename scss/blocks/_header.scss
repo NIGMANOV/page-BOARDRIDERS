@@ -1,0 +1,64 @@
+.header {
+  background-color: #f9f9f9;
+
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 160px;
+    margin-right: 160px;
+
+    .header-button {
+      display: flex;
+      gap: 25px;
+
+      .header-button-img-a {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 15px;
+        }
+        .header-button {
+          &__goback {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500px;
+            font-size: 14px;
+            line-height: 25px;
+          }
+
+          &__region {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500px;
+            font-size: 14px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    .header-logo {
+      padding-top: 22px;
+      padding-bottom: 22px;
+    }
+
+    .header-button {
+      &__account {
+        text-decoration: none;
+        color: #000000;
+        font-weight: 500px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+      &__registration {
+        text-decoration: none;
+        color: #000000;
+        font-weight: 500px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+  }
+}
