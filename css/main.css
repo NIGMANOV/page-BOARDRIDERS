@@ -137,19 +137,18 @@
   margin-left: 40px;
   margin-right: 10px;
 }
-.main-wrapper .main-basket .main-basket-img .main-basket-quantity__count {
+.main-wrapper .main-basket .main-basket-img .main-basket-quantity .main-basket-quantity__count {
   width: 66px;
   height: 40px;
   border: 1px solid #ced4d7;
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 4px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 30px;
-  letter-spacing: -0.02em;
+}
+.main-wrapper .main-basket .main-basket-img .main-basket-quantity .main-basket-quantity__count::-moz-placeholder {
+  color: #000;
+}
+.main-wrapper .main-basket .main-basket-img .main-basket-quantity .main-basket-quantity__count::placeholder {
+  color: #000;
 }
 .main-wrapper .main-basket .main-basket-img .main-basket-quantity__plus {
   margin-left: 10px;

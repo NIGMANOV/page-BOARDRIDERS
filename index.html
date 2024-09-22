@@ -54,8 +54,8 @@
           <div class="main-basket">
             <h2 class="main-basket__title">Корзина</h2>
 
-            <div class="main-basket-img">
-              <img src="./img/x.svg" alt="x" class="main-basket-img__delete" />
+            <div class="main-basket-img" id="moment" >
+              <img src="./img/x.svg" alt="x" class="main-basket-img__delete" id="delete" style="cursor: pointer;"/>
               <div class="main-basket-img-bg">
                 <img src="./img/snowBord.svg" alt="snowBord" />
               </div>
@@ -80,12 +80,16 @@
                   src="./img/minus.svg"
                   alt="minus"
                   class="main-basket-quantity__minus"
+                  id="minus"
+                  style="cursor: pointer;"
                 />
-                <p class="main-basket-quantity__count">1</p>
+                <input class="main-basket-quantity__count" placeholder="0" id="count"></input>
                 <img
                   src="./img/plus.svg"
                   alt="plus"
                   class="main-basket-quantity__plus"
+                  id="plus"
+                  style="cursor: pointer;"
                 />
               </div>
 
@@ -94,8 +98,8 @@
 
             <!--  -->
 
-            <div class="main-basket-img">
-              <img src="./img/x.svg" alt="x" class="main-basket-img__delete" />
+            <div class="main-basket-img" id="moment2">
+              <img src="./img/x.svg" alt="x" class="main-basket-img__delete" id="delete2" style="cursor: pointer;"/>
               <div class="main-basket-img-bg">
                 <img src="./img/snowBord.svg" alt="snowBord" />
               </div>
@@ -120,12 +124,16 @@
                   src="./img/minus.svg"
                   alt="minus"
                   class="main-basket-quantity__minus"
+                  id="minus2"
+                  style="cursor: pointer;"
                 />
-                <p class="main-basket-quantity__count">1</p>
+                <input class="main-basket-quantity__count" placeholder="0" id="count2"></input>
                 <img
                   src="./img/plus.svg"
                   alt="plus"
                   class="main-basket-quantity__plus"
+                  id="plus2"
+                  style="cursor: pointer;"
                 />
               </div>
 
@@ -134,7 +142,7 @@
 
             <!--  -->
 
-            <div class="main-basket-amount">
+            <div class="main-basket-amount" id="amount">
               <p class="main-basket-amount__product">2 товара на сумму</p>
               <h1 class="main-basket-amount__sum">118 790 ₽</h1>
             </div>
@@ -326,6 +334,7 @@
       <br>
       <br>
     </main>
-
+    <!-- javascript -->
+    <script src="app.js"></script>
   </body>
 </html>

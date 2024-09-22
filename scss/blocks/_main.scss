@@ -75,19 +75,15 @@
           margin-left: 40px;
           margin-right: 10px;
         }
-        &__count {
+        .main-basket-quantity__count {
           width: 66px;
           height: 40px;
           border: 1px solid #ced4d7;
           background-color: #fff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           border-radius: 4px;
-          font-size: 18px;
-          font-weight: 500;
-          line-height: 30px;
-          letter-spacing: -0.02em;
+          &::placeholder {
+            color: #000;
+          }
         }
         &__plus {
           margin-left: 10px;
