@@ -95,7 +95,7 @@
         font-weight: 500;
         line-height: 35px;
         letter-spacing: -0.02em;
-        margin-left: 56px;
+        margin-right: 40px;
       }
     }
 
@@ -458,4 +458,26 @@
       }
     }
   }
+  .main-basket-img {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+  .main-basket-quantity {
+    display: flex;
+    align-items: center;
+  }
+  .main-basket-quantity img {
+    width: 20px;
+    height: 20px;
+  }
+  .main-basket-quantity__count {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+  }
 }
+
+

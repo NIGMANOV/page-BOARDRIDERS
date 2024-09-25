@@ -1,78 +1,101 @@
-const myInput = document.querySelector('#count')
-const minusBtn = document.querySelector('#minus')
-const plusBtn = document.querySelector('#plus')
+const basket = document.querySelector("#moment");
+const totalSumElement = document.querySelector(".main-shopping-cart__sum");
+const totalSumElement2 = document.querySelector(".main-basket-amount__sum");
+const totalScore = document.querySelector(".main-shopping-cart__scores");
 
-const myInput2 = document.querySelector('#count2')
-const minusBtn2 = document.querySelector('#minus2')
-const plusBtn2 = document.querySelector('#plus2')
+const snowBording = [
+  {
+    snowBord: "Сноуборд GNU Asym Carbon Credit Btx Multicolor",
+    cost: 59395,
+    image: "https://i.imghippo.com/files/NzmMx1727178872.svg",
+    count: 1,
+  },
+  {
+    snowBord: "Сноуборд Lib Tech Skate Banana Yellow",
+    cost: 59395,
+    image: "https://i.imghippo.com/files/NzmMx1727178872.svg",
+    count: 1,
+  },
+];
 
-const moment = document.querySelector('#moment')
-const moment2 = document.querySelector('#moment2')
-const amount = document.querySelector('#amount')
-const deleteBtn = document.querySelector('#delete')
-const deleteBtn2 = document.querySelector('#delete2')
+const createItem = (snowBord, cost, image, count) => {
+  const initialCost = cost;
 
-myInput.placeholder = '0'
-myInput.style.paddingTop = '5px'
-myInput.style.paddingBottom = '5px'
-myInput.style.paddingLeft = '27px'
-myInput.style.paddingRight = '27px'
-myInput.style.fontSize = '14px'
-myInput.style.fontWeight = '500'
-myInput.style.lineHeight = '30px'
-myInput.style.letterSpacing = '-0.02em'
+  const itemContainer = document.createElement("div");
+  itemContainer.classList.add("main-basket-img");
 
-// 
+  itemContainer.innerHTML = `
+        <img src="./img/x.svg" alt="x" class="main-basket-img__delete" style="cursor: pointer;" />
+        <div class="main-basket-img-bg">
+            <img src="${image}" alt="snowBord" />
+        </div>
+        <div class="main-basket-p">
+            <p class="main-basket-p__name">${snowBord}</p>
+            <p class="main-basket-p__article">Артикул производителя: 19SN003</p>
+            <div class="main-basket-p-color-size">
+                <p class="main-basket-p__color__size">Цвет: Цветной</p>
+                <p class="main-basket-p__color__size">Размер: XL</p>
+            </div>
+        </div>
+        <div class="main-basket-quantity">
+            <img src="./img/minus.svg" alt="minus" class="main-basket-quantity__minus" style="cursor: pointer;" />
+            <input class="main-basket-quantity__count" placeholder="0" value="${count}" readonly />
+            <img src="./img/plus.svg" alt="plus" class="main-basket-quantity__plus" style="cursor: pointer;" />
+        </div>
+        <p class="main-basket__cost">${cost} ₽</p>
+    `;
 
-myInput2.placeholder = '0'
-myInput2.style.paddingTop = '5px'
-myInput2.style.paddingBottom = '5px'
-myInput2.style.paddingLeft = '27px'
-myInput2.style.paddingRight = '27px'
-myInput2.style.fontSize = '14px'
-myInput2.style.fontWeight = '500'
-myInput2.style.lineHeight = '30px'
-myInput2.style.letterSpacing = '-0.02em'
+  const minusButton = itemContainer.querySelector(
+    ".main-basket-quantity__minus"
+  );
+  const plusButton = itemContainer.querySelector(".main-basket-quantity__plus");
+  const countInput = itemContainer.querySelector(
+    ".main-basket-quantity__count"
+  );
+  const costDisplay = itemContainer.querySelector(".main-basket__cost");
 
-// 
-
-plusBtn.onclick = () => {
-    let action = '+'
-    if(action === '+'){
-        myInput.value++
+  minusButton.addEventListener("click", () => {
+    if (count > 0) {
+      count--;
+      countInput.value = count;
+      const newCost = initialCost * count;
+      costDisplay.textContent = `${newCost} ₽`;
+      updateTotalSum();
     }
-}
+  });
+  
+  plusButton.addEventListener("click", () => {
+    count++;
+    countInput.value = count;
+    const newCost = initialCost * count;
+    costDisplay.textContent = `${newCost} ₽`;
+    updateTotalSum();
+  });
 
-minusBtn.onclick = () => {
-    let action = '-'
-    if(action === '-' && myInput.value > 0){
-        myInput.value--
-    }
-}
+  return itemContainer;
+};
 
-// 
+const updateTotalSum = () => {
+  const allCosts = document.querySelectorAll(".main-basket__cost");
+  let totalSum = 0;
 
-plusBtn2.onclick = () => {
-    let action = '+'
-    if(action === '+'){
-        myInput2.value++
-    }
-}
+  allCosts.forEach((costElement) => {
+    const costText = costElement.textContent
+      .replace(" ₽", "")
+      .replace(/\s+/g, "");
+    totalSum += parseFloat(costText);
+  });
 
-minusBtn2.onclick = () => {
-    let action = '-'
-    if(action === '-' && myInput2.value > 0){
-        myInput2.value--
-    }
-}
+  const discountSum = totalSum * 0.98;
 
-// 
+  totalSumElement.textContent = `${discountSum.toFixed(2)} ₽`;
+  totalSumElement2.textContent = `${discountSum.toFixed(2)} ₽`;
+  totalScore.textContent = `+ ${discountSum.toFixed(2)} баллов`;
+};
 
-deleteBtn.onclick = () => {
-    moment.remove()
-}
+snowBording.forEach((item) => {
+  const newItem = createItem(item.snowBord, item.cost, item.image, item.count);
+  basket.appendChild(newItem);
+});
 
-deleteBtn2.onclick = () => {
-    moment2.remove()
-    amount.remove()
-}
+updateTotalSum();

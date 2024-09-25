@@ -21,7 +21,7 @@
                 class="header-button__image"
                 alt="goBack"
               />
-              <a href="" class="header-button__goback">
+              <a href="#" class="header-button__goback">
                 Вернуться к покупкам
               </a>
             </div>
@@ -51,100 +51,18 @@
     <main class="main">
       <div class="container">
         <div class="main-wrapper">
-          <div class="main-basket">
+          <div class="main-basket" id="basket">
             <h2 class="main-basket__title">Корзина</h2>
 
-            <div class="main-basket-img" id="moment" >
-              <img src="./img/x.svg" alt="x" class="main-basket-img__delete" id="delete" style="cursor: pointer;"/>
-              <div class="main-basket-img-bg">
-                <img src="./img/snowBord.svg" alt="snowBord" />
-              </div>
-
-              <div class="main-basket-p">
-                <p class="main-basket-p__name">
-                  Сноуборд GNU Asym Carbon Credit Btx Multicolor
-                </p>
-
-                <p class="main-basket-p__article">
-                  Артикул производителя: 19SN003
-                </p>
-
-                <div class="main-basket-p-color-size">
-                  <p class="main-basket-p__color__size">Цвет: Цветной</p>
-                  <p class="main-basket-p__color__size">Размер: XL</p>
-                </div>
-              </div>
-
-              <div class="main-basket-quantity">
-                <img
-                  src="./img/minus.svg"
-                  alt="minus"
-                  class="main-basket-quantity__minus"
-                  id="minus"
-                  style="cursor: pointer;"
-                />
-                <input class="main-basket-quantity__count" placeholder="0" id="count"></input>
-                <img
-                  src="./img/plus.svg"
-                  alt="plus"
-                  class="main-basket-quantity__plus"
-                  id="plus"
-                  style="cursor: pointer;"
-                />
-              </div>
-
-              <p class="main-basket__cost">59 395 ₽</p>
-            </div>
-
-            <!--  -->
-
-            <div class="main-basket-img" id="moment2">
-              <img src="./img/x.svg" alt="x" class="main-basket-img__delete" id="delete2" style="cursor: pointer;"/>
-              <div class="main-basket-img-bg">
-                <img src="./img/snowBord.svg" alt="snowBord" />
-              </div>
-
-              <div class="main-basket-p">
-                <p class="main-basket-p__name">
-                  Сноуборд GNU Asym Carbon Credit Btx Multicolor
-                </p>
-
-                <p class="main-basket-p__article">
-                  Артикул производителя: 19SN003
-                </p>
-
-                <div class="main-basket-p-color-size">
-                  <p class="main-basket-p__color__size">Цвет: Цветной</p>
-                  <p class="main-basket-p__color__size">Размер: XL</p>
-                </div>
-              </div>
-
-              <div class="main-basket-quantity">
-                <img
-                  src="./img/minus.svg"
-                  alt="minus"
-                  class="main-basket-quantity__minus"
-                  id="minus2"
-                  style="cursor: pointer;"
-                />
-                <input class="main-basket-quantity__count" placeholder="0" id="count2"></input>
-                <img
-                  src="./img/plus.svg"
-                  alt="plus"
-                  class="main-basket-quantity__plus"
-                  id="plus2"
-                  style="cursor: pointer;"
-                />
-              </div>
-
-              <p class="main-basket__cost">59 395 ₽</p>
+            <div id="moment" >
+ 
             </div>
 
             <!--  -->
 
             <div class="main-basket-amount" id="amount">
               <p class="main-basket-amount__product">2 товара на сумму</p>
-              <h1 class="main-basket-amount__sum">118 790 ₽</h1>
+              <h1 class="main-basket-amount__sum"></h1>
             </div>
 
             <!--  -->
@@ -306,12 +224,12 @@
 
                 <div class="main-shopping-cart-total">
                   <p class="main-shopping-cart__result">Итого:</p>
-                  <h1 class="main-shopping-cart__sum">118 790 ₽</h1>
+                  <h1 class="main-shopping-cart__sum"></h1>
                 </div>
 
                 <div class="main-shopping-cart-scores">
                   <p class="main-shopping-cart__pay">Баллы за покупку:</p>
-                  <p class="main-shopping-cart__scores">+118 790 баллов</p>
+                  <p class="main-shopping-cart__scores"></p>
                 </div>
 
                 <div class="main-shopping-cart__line"></div>
@@ -321,13 +239,10 @@
                 </div>
 
               </div>
-              
-
             </div>
           </div>
         </div>
       </div>
-
       <br>
       <br>
       <br>
