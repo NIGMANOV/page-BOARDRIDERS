@@ -73,7 +73,6 @@
         align-items: center;
         &__minus {
           margin-left: 40px;
-          margin-right: 10px;
         }
         .main-basket-quantity__count {
           width: 66px;
@@ -84,9 +83,6 @@
           &::placeholder {
             color: #000;
           }
-        }
-        &__plus {
-          margin-left: 10px;
         }
       }
 

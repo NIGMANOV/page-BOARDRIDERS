@@ -135,7 +135,6 @@
 }
 .main-wrapper .main-basket .main-basket-img .main-basket-quantity__minus {
   margin-left: 40px;
-  margin-right: 10px;
 }
 .main-wrapper .main-basket .main-basket-img .main-basket-quantity .main-basket-quantity__count {
   width: 66px;
@@ -149,9 +148,6 @@
 }
 .main-wrapper .main-basket .main-basket-img .main-basket-quantity .main-basket-quantity__count::placeholder {
   color: #000;
-}
-.main-wrapper .main-basket .main-basket-img .main-basket-quantity__plus {
-  margin-left: 10px;
 }
 .main-wrapper .main-basket .main-basket-img .main-basket__cost {
   font-size: 21px;
