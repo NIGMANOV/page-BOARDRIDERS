@@ -8,7 +8,7 @@ const snowBording = [
     snowBord: "Сноуборд GNU Asym Carbon Credit Btx Multicolor",
     cost: 59395,
     image: "https://i.imghippo.com/files/NzmMx1727178872.svg",
-    count: 1,  // Количество на складе
+    count: 5,  // Количество на складе
   },
   {
     snowBord: "Сноуборд Lib Tech Skate Banana Yellow",
