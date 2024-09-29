@@ -8,17 +8,18 @@ const snowBording = [
     snowBord: "Сноуборд GNU Asym Carbon Credit Btx Multicolor",
     cost: 59395,
     image: "https://i.imghippo.com/files/NzmMx1727178872.svg",
-    count: 1,
+    count: 1,  // Количество на складе
   },
   {
     snowBord: "Сноуборд Lib Tech Skate Banana Yellow",
     cost: 59395,
     image: "https://i.imghippo.com/files/NzmMx1727178872.svg",
-    count: 1,
+    count: 15,  // Количество на складе
   },
 ];
 
-const createItem = (snowBord, cost, image, count) => {
+const createItem = (snowBord, cost, image, availableCount) => {
+  let count = 1;
   const initialCost = cost;
 
   const itemContainer = document.createElement("div");
@@ -55,7 +56,7 @@ const createItem = (snowBord, cost, image, count) => {
   const costDisplay = itemContainer.querySelector(".main-basket__cost");
 
   minusButton.addEventListener("click", () => {
-    if (count > 0) {
+    if (count > 1) {
       count--;
       countInput.value = count;
       const newCost = initialCost * count;
@@ -65,11 +66,15 @@ const createItem = (snowBord, cost, image, count) => {
   });
   
   plusButton.addEventListener("click", () => {
-    count++;
-    countInput.value = count;
-    const newCost = initialCost * count;
-    costDisplay.textContent = `${newCost} ₽`;
-    updateTotalSum();
+    if (count < availableCount) {
+      count++;
+      countInput.value = count;
+      const newCost = initialCost * count;
+      costDisplay.textContent = `${newCost} ₽`;
+      updateTotalSum();
+    } else {
+      alert(`Извините, на складе доступно только ${availableCount} товаров.`);
+    }
   });
 
   return itemContainer;
@@ -86,11 +91,15 @@ const updateTotalSum = () => {
     totalSum += parseFloat(costText);
   });
 
-  const discountSum = totalSum * 0.98;
+  const discountSum = totalSum;
+
+  // Добавил кэшбек 2%
+  const percent = 2;
+  const resultScore = discountSum / 100 * percent;
 
   totalSumElement.textContent = `${discountSum.toFixed(2)} ₽`;
   totalSumElement2.textContent = `${discountSum.toFixed(2)} ₽`;
-  totalScore.textContent = `+ ${discountSum.toFixed(2)} баллов`;
+  totalScore.textContent = `+ ${resultScore.toFixed(2)} баллов`;
 };
 
 snowBording.forEach((item) => {
